@@ -76,6 +76,7 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
         cursor.close();
 
         // return contact list
+        db.close();
         return yearList;
     }
 
@@ -202,6 +203,7 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
         cursor.close();
 
         // return contact list
+        db.close();
         return makeList;
     }
 }
