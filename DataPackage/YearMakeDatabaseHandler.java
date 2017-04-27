@@ -62,7 +62,6 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        cursor.close();
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -74,6 +73,7 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
                 yearList.add(year);
             } while (cursor.moveToNext());
         }
+        cursor.close();
 
         // return contact list
         return yearList;
@@ -188,7 +188,6 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        cursor.close();
 
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -200,6 +199,7 @@ public class YearMakeDatabaseHandler extends SQLiteOpenHelper{
                 makeList.add(make);
             } while (cursor.moveToNext());
         }
+        cursor.close();
 
         // return contact list
         return makeList;
